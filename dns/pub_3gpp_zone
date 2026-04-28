@@ -10,6 +10,4 @@ $TTL 1W
                         1D IN NS        pubns
 pubns                   1D IN A         DNS_IP
 
-aes                     1D IN A         ENTITLEMENT_SERVER_IP
-
 epdg.epc                1D IN A         DOCKER_HOST_IP
