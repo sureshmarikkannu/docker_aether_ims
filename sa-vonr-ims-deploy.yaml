@@ -51,9 +51,7 @@ services:
     expose:
       - "2223/udp"
       # - "49000-50000/udp"
-    networks:
-      default:
-        ipv4_address: ${RTPENGINE_IP}
+    network_mode: host
   mysql:
     build: ./mysql
     image: docker_mysql
