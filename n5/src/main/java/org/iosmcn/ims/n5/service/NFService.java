@@ -239,9 +239,11 @@ public class NFService {
             com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
             com.fasterxml.jackson.databind.JsonNode jsonNode = objectMapper.readTree(responseBody);
 
-            if (jsonNode.has("heartBeatTimer")) {
-                return jsonNode.get("heartBeatTimer").asInt();
-            }
+            if (jsonNode.has("HeartBeatTimer")) {
+                return jsonNode.get("HeartBeatTimer").asInt();
+            } else if (jsonNode.has("heartBeatTimer")) {
+		return jsonNode.get("heartBeatTimer").asInt();
+	    }
         } catch (Exception e) {
             logger.error("Error parsing heartbeat timer from response: {}", e.getMessage(), e);
         }
